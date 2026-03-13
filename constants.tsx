@@ -138,7 +138,7 @@ export const TESTIMONIALS = [
   },
   {
     id: 2,
-    quote: "Buscaba algo único para mi aniversario y la curaduría editorial de L'Art de la Fleur superó todas mis expectativas.",
+    quote: "Buscaba algo único para mi aniversario y la curaduría editorial de nyuk.pe superó todas mis expectativas.",
     author: "@shes.paoo",
     role: "Arquitecto",
     location: "Barcelona"

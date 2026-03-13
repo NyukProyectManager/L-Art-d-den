@@ -1,0 +1,440 @@
+/* Global styles for nyuk.pe - Luxury Floral Boutique */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* CSS Variables for Luxury Color Palette */
+:root {
+  /* Primary Colors - Luxury Editorial */
+  --black-deep: #0A0A0A;
+  --cream-ivory: #F5F0E8;
+  --moss-green: #2D3B2D;
+  --powder-rose: #C9A99A;
+  
+  /* Extended Palette */
+  --moss-green-light: #3A4A3A;
+  --cream-warm: #FAF8F3;
+  --rose-muted: #B8998A;
+  --black-soft: #1A1A1A;
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Animation Durations */
+  --duration-slow: 0.9s;
+  --duration-medium: 0.6s;
+  --duration-fast: 0.3s;
+  
+  /* Animation Easing */
+  --ease-luxury: [0.16, 1, 0.3, 1];
+  --ease-spring: [0.175, 0.885, 0.32, 1.275];
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+}
+
+/* Enhanced Product Card Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out;
+}
+
+@keyframes heart-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-heart-pulse {
+  animation: heart-pulse 0.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 0.6s ease-in-out;
+}
+
+/* Delay animations for particles */
+.animate-pulse.delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-pulse.delay-200 {
+  animation-delay: 200ms;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--cream-ivory);
+  color: var(--black-deep);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+/* Luxury Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background: var(--powder-rose);
+  z-index: 9999;
+  transform-origin: left;
+  will-change: transform;
+}
+
+/* Performance Optimizations */
+.gpu-accelerated {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Performance Optimizations */
+.gpu-accelerated {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Remove will-change after animation completes */
+.animation-complete {
+  will-change: auto;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  :root {
+    --duration-slow: 0.7s;
+    --duration-medium: 0.4s;
+    --duration-fast: 0.2s;
+    
+    /* Reduced motion for mobile */
+    --parallax-factor: 0.15;
+    --stagger-delay: 0.06s;
+    --grain-opacity: 0.02;
+  }
+  
+  /* Disable 3D tilt on mobile */
+  .luxury-card {
+    transform-style: flat !important;
+  }
+  
+  /* Mobile-specific grain overlay */
+  .grain-overlay {
+    opacity: var(--grain-opacity);
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 769px) {
+  :root {
+    --parallax-factor: 0.4;
+    --stagger-delay: 0.12s;
+    --grain-opacity: 0.035;
+  }
+}
+
+/* Skeleton loader for content loading */
+.skeleton-loader {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Image optimization */
+.responsive-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Prefers-reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .grain-overlay {
+    display: none;
+  }
+  
+  .luxury-card {
+    transform-style: flat !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --black-deep: #000000;
+    --cream-ivory: #FFFFFF;
+    --moss-green: #1A2F1A;
+    --powder-rose: #8B7355;
+  }
+}
+
+/* Custom animations */
+@keyframes custom-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-slow-spin {
+  animation: custom-spin 20s linear infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.reveal {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.reveal-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.reveal-delay-3 { animation-delay: 0.3s; opacity: 0; }
+
+/* Heart pulse animation */
+@keyframes heart-pulse {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.6); }
+  50% { transform: scale(0.85); }
+  70% { transform: scale(1.15); }
+  90% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.animate-heart-pulse {
+  animation: heart-pulse 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Fly to cart animation */
+@keyframes fly-to-cart {
+  0% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 1;
+    border-radius: 4px;
+  }
+  20% {
+    transform: scale(1.15) rotate(-10deg);
+    opacity: 1;
+  }
+  100% { 
+    top: 20px;
+    left: calc(100% - 60px);
+    width: 24px;
+    height: 24px;
+    transform: scale(0.1) rotate(45deg); 
+    opacity: 0; 
+    border-radius: 50%;
+  }
+}
+
+/* Cart impact animation */
+@keyframes cart-impact {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.5) rotate(-10deg); }
+  50% { transform: scale(0.8) rotate(5deg); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.animate-cart-impact {
+  animation: cart-impact 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Petal fall animation */
+@keyframes petal-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+.petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 200;
+  animation: petal-fall linear forwards;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile and reduced motion optimizations */
+@media (max-width: 768px) {
+  .reveal {
+    animation-duration: 0.4s;
+    transform: none !important;
+  }
+  
+  .petal {
+    display: none; /* Disable petals on mobile for performance */
+  }
+  
+  .animate-heart-pulse {
+    animation: none; /* Disable complex animations on mobile */
+  }
+  
+  .fly-to-cart {
+    animation-duration: 0.3s; /* Faster animation on mobile */
+  }
+  
+  .group-hover\:scale-110:hover {
+    transform: scale(1.05); /* Reduced scale on mobile */
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .petal {
+    display: none;
+  }
+  
+  .animate-heart-pulse,
+  .animate-cart-impact,
+  .fly-to-cart {
+    animation: none;
+  }
+  
+  .group-hover\:scale-110:hover {
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gray-100 {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+  }
+  
+  .text-green-700 {
+    color: #000000;
+  }
+}

@@ -16,7 +16,7 @@ export const LoadingScreen: React.FC = () => {
       
       <div className="mt-16 text-center">
         <h2 className="serif text-3xl md:text-4xl text-[#2D2D2D] italic tracking-[0.1em] opacity-0 animate-[fade-up_1s_ease-out_0.5s_forwards]">
-          L'Art d'Éden
+          nyuk.pe
         </h2>
         <p className="mt-4 text-[10px] uppercase tracking-[0.6em] text-[#A3B18A] opacity-0 animate-[fade-up_1s_ease-out_0.8s_forwards]">
           Floreciendo para ti

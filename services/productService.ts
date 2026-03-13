@@ -3,15 +3,7 @@
  * E:\Documentos\magy web\services\productService.ts
  */
 
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  category: string;
-  description: string;
-  addedAt?: string;
-}
+import { Product } from '../types';
 
 // URL de Google Apps Script de PRODUCTOS
 const GOOGLE_SHEETS_PRODUCTOS_URL = 'https://script.google.com/macros/s/AKfycbyzjpgMPGQ9RLXvdFUfNrvRYnmuj0qDEbGdycwuRjdqYQn5iTGTcnVMGmKqAeCM1I94/exec';
