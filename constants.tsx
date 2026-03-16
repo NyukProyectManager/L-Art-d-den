@@ -79,7 +79,7 @@ export const COLLECTIONS = [
     id: 'san-valentin',
     title: '',
     subtitle: 'El lenguaje del amor',
-    image: '/imagenes/portada-sanvalentin.jpg', // ← minúsculas
+    image: '/imagenes/portada-sanvalentin.png', // ← minúsculas
     category: 'San Valentín'
   },
   {
