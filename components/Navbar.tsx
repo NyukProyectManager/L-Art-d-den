@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart, onLinkCli
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Mobile Menu Toggle */}
           <div className="md:hidden z-50">
-            <button className="p-2 -ml-2 hover:bg-black/5 rounded-full transition-colors" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"} className="p-2 -ml-2 hover:bg-black/5 rounded-full transition-colors" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
             </button>
           </div>
@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart, onLinkCli
 
           {/* Icons - Espacio para el logo centrado */}
           <div className="flex items-center space-x-3 md:space-x-5">
-            <button onClick={(e) => onLinkClick(e, 'Favoritos')} className="relative group hover:text-[#A3B18A] transition-colors p-2">
+            <button aria-label="Ver Favoritos" onClick={(e) => onLinkClick(e, 'Favoritos')} className="relative group hover:text-[#A3B18A] transition-colors p-2">
               <Heart size={20} strokeWidth={1.2} />
               {wishlistCount > 0 && (
                 <span className="absolute top-1 right-1 text-[7px] font-bold bg-[#2D2D2D] text-white rounded-full w-3.5 h-3.5 flex items-center justify-center">
@@ -97,6 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart, onLinkCli
               )}
             </button>
             <button
+              aria-label="Ver Carrito"
               onClick={onOpenCart}
               className={`flex items-center space-x-1 hover:text-[#A3B18A] transition-colors group relative p-2 ${isCartBouncing ? 'animate-cart-impact text-[#A3B18A]' : ''}`}
             >

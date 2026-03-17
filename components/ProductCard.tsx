@@ -90,6 +90,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, 
       <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100">
         <img 
           ref={imageRef}
+          loading="lazy"
           src={product.image} 
           alt={product.name} 
           className="w-full h-full object-cover transition-all duration-800 group-hover:scale-105"

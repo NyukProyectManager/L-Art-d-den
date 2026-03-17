@@ -1,0 +1,391 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - button "Colecciones" [ref=e7] [cursor=pointer]: Colecciones
+      - heading "nyuk.pe" [level=1] [ref=e10] [cursor=pointer]
+      - generic [ref=e11]:
+        - button "Ver Favoritos" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+        - button "Ver Carrito" [ref=e15] [cursor=pointer]:
+          - img [ref=e16]
+  - main [ref=e19]:
+    - generic [ref=e22]:
+      - button "Volver a Inicio" [ref=e23] [cursor=pointer]:
+        - img [ref=e24]
+        - generic [ref=e26]: Volver a Inicio
+      - generic [ref=e27]:
+        - paragraph [ref=e28]: Nuestra Selección
+        - heading "Catálogo General" [level=1] [ref=e29]
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e33]:
+            - img [ref=e34]
+            - generic [ref=e37]: NUEVO
+          - img [ref=e39]
+          - generic [ref=e44]:
+            - img "Peonías Rocío del Alba" [ref=e45]
+            - generic [ref=e54]:
+              - paragraph [ref=e55]: Frescas peonías que capturan la esencia de la primavera
+              - generic [ref=e56]:
+                - generic [ref=e59]: Premium
+                - generic [ref=e62]: Handmade
+            - button [ref=e63] [cursor=pointer]:
+              - img [ref=e64]
+            - button "Regalar" [ref=e67] [cursor=pointer]:
+              - img [ref=e68]
+              - generic [ref=e72]: Regalar
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: Frescas
+              - generic [ref=e76]:
+                - img [ref=e77]
+                - generic [ref=e81]: Disponible
+            - heading "Peonías Rocío del Alba" [level=3] [ref=e82]
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - generic [ref=e85]: S/
+                - generic [ref=e86]: "154"
+                - generic [ref=e87]: ".00"
+              - generic [ref=e88]:
+                - img [ref=e90]
+                - img [ref=e96]
+            - generic [ref=e99]:
+              - generic [ref=e102]: Envío gratis
+              - generic [ref=e105]: Gift card
+              - generic [ref=e108]: Premium
+            - button "Comprar Ahora" [ref=e109] [cursor=pointer]:
+              - generic [ref=e111]:
+                - img [ref=e112]
+                - generic [ref=e115]: Comprar Ahora
+        - generic [ref=e116]:
+          - generic [ref=e118]:
+            - img [ref=e119]
+            - generic [ref=e122]: NUEVO
+          - img [ref=e124]
+          - generic [ref=e129]:
+            - img "Especial Rose" [ref=e130]
+            - generic [ref=e139]:
+              - paragraph [ref=e140]: Pasión y pureza en un mismo corazón.
+              - generic [ref=e141]:
+                - generic [ref=e144]: Premium
+                - generic [ref=e147]: Handmade
+            - button [ref=e148] [cursor=pointer]:
+              - img [ref=e149]
+            - button "Regalar" [ref=e152] [cursor=pointer]:
+              - img [ref=e153]
+              - generic [ref=e157]: Regalar
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Frescas
+              - generic [ref=e161]:
+                - img [ref=e162]
+                - generic [ref=e166]: Disponible
+            - heading "Especial Rose" [level=3] [ref=e167]
+            - generic [ref=e168]:
+              - generic [ref=e169]:
+                - generic [ref=e170]: S/
+                - generic [ref=e171]: "215"
+                - generic [ref=e172]: ".00"
+              - generic [ref=e173]:
+                - img [ref=e175]
+                - img [ref=e181]
+            - generic [ref=e184]:
+              - generic [ref=e187]: Envío gratis
+              - generic [ref=e190]: Gift card
+              - generic [ref=e193]: Premium
+            - button "Comprar Ahora" [ref=e194] [cursor=pointer]:
+              - generic [ref=e196]:
+                - img [ref=e197]
+                - generic [ref=e200]: Comprar Ahora
+        - generic [ref=e201]:
+          - generic [ref=e203]:
+            - img [ref=e204]
+            - generic [ref=e207]: NUEVO
+          - img [ref=e209]
+          - generic [ref=e214]:
+            - img "Primavera Única" [ref=e215]
+            - generic [ref=e224]:
+              - paragraph [ref=e225]: Colores, olores y belleza que representa la hermosa primavera
+              - generic [ref=e226]:
+                - generic [ref=e229]: Premium
+                - generic [ref=e232]: Handmade
+            - button [ref=e233] [cursor=pointer]:
+              - img [ref=e234]
+            - button "Regalar" [ref=e237] [cursor=pointer]:
+              - img [ref=e238]
+              - generic [ref=e242]: Regalar
+          - generic [ref=e243]:
+            - generic [ref=e244]:
+              - generic [ref=e245]: Frescas
+              - generic [ref=e246]:
+                - img [ref=e247]
+                - generic [ref=e251]: Disponible
+            - heading "Primavera Única" [level=3] [ref=e252]
+            - generic [ref=e253]:
+              - generic [ref=e254]:
+                - generic [ref=e255]: S/
+                - generic [ref=e256]: "125"
+                - generic [ref=e257]: ".00"
+              - generic [ref=e258]:
+                - img [ref=e260]
+                - img [ref=e266]
+            - generic [ref=e269]:
+              - generic [ref=e272]: Envío gratis
+              - generic [ref=e275]: Gift card
+              - generic [ref=e278]: Premium
+            - button "Comprar Ahora" [ref=e279] [cursor=pointer]:
+              - generic [ref=e281]:
+                - img [ref=e282]
+                - generic [ref=e285]: Comprar Ahora
+        - generic [ref=e286]:
+          - generic [ref=e288]:
+            - img [ref=e289]
+            - generic [ref=e292]: NUEVO
+          - img [ref=e294]
+          - generic [ref=e299]:
+            - img "Crónica de un Idilio" [ref=e300]
+            - generic [ref=e309]:
+              - paragraph [ref=e310]: Rosas profundas y papel de historia, elegancia botánica que narra silencios de amor.
+              - generic [ref=e311]:
+                - generic [ref=e314]: Premium
+                - generic [ref=e317]: Handmade
+            - button [ref=e318] [cursor=pointer]:
+              - img [ref=e319]
+            - button "Regalar" [ref=e322] [cursor=pointer]:
+              - img [ref=e323]
+              - generic [ref=e327]: Regalar
+          - generic [ref=e328]:
+            - generic [ref=e329]:
+              - generic [ref=e330]: Frescas
+              - generic [ref=e331]:
+                - img [ref=e332]
+                - generic [ref=e336]: Disponible
+            - heading "Crónica de un Idilio" [level=3] [ref=e337]
+            - generic [ref=e338]:
+              - generic [ref=e339]:
+                - generic [ref=e340]: S/
+                - generic [ref=e341]: "345"
+                - generic [ref=e342]: ".00"
+              - generic [ref=e343]:
+                - img [ref=e345]
+                - img [ref=e351]
+            - generic [ref=e354]:
+              - generic [ref=e357]: Envío gratis
+              - generic [ref=e360]: Gift card
+              - generic [ref=e363]: Premium
+            - button "Comprar Ahora" [ref=e364] [cursor=pointer]:
+              - generic [ref=e366]:
+                - img [ref=e367]
+                - generic [ref=e370]: Comprar Ahora
+        - generic [ref=e371]:
+          - generic [ref=e373]:
+            - img [ref=e374]
+            - generic [ref=e377]: NUEVO
+          - img [ref=e379]
+          - generic [ref=e384]:
+            - img "Elysian Crimson" [ref=e385]
+            - generic [ref=e394]:
+              - paragraph [ref=e395]: Velvet roses and ethereal lilies compose a silent, sophisticated symphony of timeless, botanical elegance.
+              - generic [ref=e396]:
+                - generic [ref=e399]: Premium
+                - generic [ref=e402]: Handmade
+            - button [ref=e403] [cursor=pointer]:
+              - img [ref=e404]
+            - button "Regalar" [ref=e407] [cursor=pointer]:
+              - img [ref=e408]
+              - generic [ref=e412]: Regalar
+          - generic [ref=e413]:
+            - generic [ref=e414]:
+              - generic [ref=e415]: Frescas
+              - generic [ref=e416]:
+                - img [ref=e417]
+                - generic [ref=e421]: Disponible
+            - heading "Elysian Crimson" [level=3] [ref=e422]
+            - generic [ref=e423]:
+              - generic [ref=e424]:
+                - generic [ref=e425]: S/
+                - generic [ref=e426]: "320"
+                - generic [ref=e427]: ".00"
+              - generic [ref=e428]:
+                - img [ref=e430]
+                - img [ref=e436]
+            - generic [ref=e439]:
+              - generic [ref=e442]: Envío gratis
+              - generic [ref=e445]: Gift card
+              - generic [ref=e448]: Premium
+            - button "Comprar Ahora" [ref=e449] [cursor=pointer]:
+              - generic [ref=e451]:
+                - img [ref=e452]
+                - generic [ref=e455]: Comprar Ahora
+        - generic [ref=e456]:
+          - generic [ref=e458]:
+            - img [ref=e459]
+            - generic [ref=e462]: NUEVO
+          - img [ref=e464]
+          - generic [ref=e469]:
+            - img "Rosa de Ébano Eterna" [ref=e470]
+            - generic [ref=e479]:
+              - paragraph [ref=e480]: Elegantes rosas en tonos profundos que evocan misterio
+              - generic [ref=e481]:
+                - generic [ref=e484]: Premium
+                - generic [ref=e487]: Handmade
+            - button [ref=e488] [cursor=pointer]:
+              - img [ref=e489]
+            - button "Regalar" [ref=e492] [cursor=pointer]:
+              - img [ref=e493]
+              - generic [ref=e497]: Regalar
+          - generic [ref=e498]:
+            - generic [ref=e499]:
+              - generic [ref=e500]: Arreglos
+              - generic [ref=e501]:
+                - img [ref=e502]
+                - generic [ref=e506]: Disponible
+            - heading "Rosa de Ébano Eterna" [level=3] [ref=e507]
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - generic [ref=e510]: S/
+                - generic [ref=e511]: "765"
+                - generic [ref=e512]: ".00"
+              - generic [ref=e513]:
+                - img [ref=e515]
+                - img [ref=e521]
+            - generic [ref=e524]:
+              - generic [ref=e527]: Envío gratis
+              - generic [ref=e530]: Gift card
+              - generic [ref=e533]: Premium
+            - button "Comprar Ahora" [ref=e534] [cursor=pointer]:
+              - generic [ref=e536]:
+                - img [ref=e537]
+                - generic [ref=e540]: Comprar Ahora
+        - generic [ref=e541]:
+          - generic [ref=e543]:
+            - img [ref=e544]
+            - generic [ref=e547]: NUEVO
+          - img [ref=e549]
+          - generic [ref=e554]:
+            - img "Esencia de Recuerdo Eterno" [ref=e555]
+            - generic [ref=e564]:
+              - paragraph [ref=e565]: Lenguaje silente de emociones y elegancia botánica que rinde homenaje al amor eterno.
+              - generic [ref=e566]:
+                - generic [ref=e569]: Premium
+                - generic [ref=e572]: Handmade
+            - button [ref=e573] [cursor=pointer]:
+              - img [ref=e574]
+            - button "Regalar" [ref=e577] [cursor=pointer]:
+              - img [ref=e578]
+              - generic [ref=e582]: Regalar
+          - generic [ref=e583]:
+            - generic [ref=e584]:
+              - generic [ref=e585]: Arreglos
+              - generic [ref=e586]:
+                - img [ref=e587]
+                - generic [ref=e591]: Disponible
+            - heading "Esencia de Recuerdo Eterno" [level=3] [ref=e592]
+            - generic [ref=e593]:
+              - generic [ref=e594]:
+                - generic [ref=e595]: S/
+                - generic [ref=e596]: "650"
+                - generic [ref=e597]: ".00"
+              - generic [ref=e598]:
+                - img [ref=e600]
+                - img [ref=e606]
+            - generic [ref=e609]:
+              - generic [ref=e612]: Envío gratis
+              - generic [ref=e615]: Gift card
+              - generic [ref=e618]: Premium
+            - button "Comprar Ahora" [ref=e619] [cursor=pointer]:
+              - generic [ref=e621]:
+                - img [ref=e622]
+                - generic [ref=e625]: Comprar Ahora
+        - generic [ref=e626]:
+          - generic [ref=e628]:
+            - img [ref=e629]
+            - generic [ref=e632]: NUEVO
+          - img [ref=e634]
+          - generic [ref=e639]:
+            - img "Elegancia Nocturna" [ref=e640]
+            - generic [ref=e649]:
+              - paragraph [ref=e650]: Lenguaje mudo de pétalos rojos envuelto en la sofisticada sobriedad de sombras botánicas.
+              - generic [ref=e651]:
+                - generic [ref=e654]: Premium
+                - generic [ref=e657]: Handmade
+            - button [ref=e658] [cursor=pointer]:
+              - img [ref=e659]
+            - button "Regalar" [ref=e662] [cursor=pointer]:
+              - img [ref=e663]
+              - generic [ref=e667]: Regalar
+          - generic [ref=e668]:
+            - generic [ref=e669]:
+              - generic [ref=e670]: San Valentín
+              - generic [ref=e671]:
+                - img [ref=e672]
+                - generic [ref=e676]: Disponible
+            - heading "Elegancia Nocturna" [level=3] [ref=e677]
+            - generic [ref=e678]:
+              - generic [ref=e679]:
+                - generic [ref=e680]: S/
+                - generic [ref=e681]: "195"
+                - generic [ref=e682]: ".00"
+              - generic [ref=e683]:
+                - img [ref=e685]
+                - img [ref=e691]
+            - generic [ref=e694]:
+              - generic [ref=e697]: Envío gratis
+              - generic [ref=e700]: Gift card
+              - generic [ref=e703]: Premium
+            - button "Comprar Ahora" [ref=e704] [cursor=pointer]:
+              - generic [ref=e706]:
+                - img [ref=e707]
+                - generic [ref=e710]: Comprar Ahora
+        - generic [ref=e711]:
+          - generic [ref=e713]:
+            - img [ref=e714]
+            - generic [ref=e717]: NUEVO
+          - img [ref=e719]
+          - generic [ref=e724]:
+            - img "Susurro de Terciopelo" [ref=e725]
+            - generic [ref=e734]:
+              - paragraph [ref=e735]: Un lenguaje silente de emociones profundas tejido con elegancia botánica y rosas eternas.
+              - generic [ref=e736]:
+                - generic [ref=e739]: Premium
+                - generic [ref=e742]: Handmade
+            - button [ref=e743] [cursor=pointer]:
+              - img [ref=e744]
+            - button "Regalar" [ref=e747] [cursor=pointer]:
+              - img [ref=e748]
+              - generic [ref=e752]: Regalar
+          - generic [ref=e753]:
+            - generic [ref=e754]:
+              - generic [ref=e755]: San Valentín
+              - generic [ref=e756]:
+                - img [ref=e757]
+                - generic [ref=e761]: Disponible
+            - heading "Susurro de Terciopelo" [level=3] [ref=e762]
+            - generic [ref=e763]:
+              - generic [ref=e764]:
+                - generic [ref=e765]: S/
+                - generic [ref=e766]: "187"
+                - generic [ref=e767]: ".00"
+              - generic [ref=e768]:
+                - img [ref=e770]
+                - img [ref=e776]
+            - generic [ref=e779]:
+              - generic [ref=e782]: Envío gratis
+              - generic [ref=e785]: Gift card
+              - generic [ref=e788]: Premium
+            - button "Comprar Ahora" [ref=e789] [cursor=pointer]:
+              - generic [ref=e791]:
+                - img [ref=e792]
+                - generic [ref=e795]: Comprar Ahora
+  - generic [ref=e796]:
+    - button "1 💬 ¿Necesitas ayuda?" [ref=e797] [cursor=pointer]:
+      - img [ref=e798]
+      - generic [ref=e801]: "1"
+      - generic [ref=e802]: 💬 ¿Necesitas ayuda?
+    - button "📸 @nyuk.pe" [ref=e803] [cursor=pointer]:
+      - img [ref=e804]
+      - generic [ref=e807]: 📸 @nyuk.pe
+```

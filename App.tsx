@@ -9,7 +9,8 @@ import { PRODUCTS, TESTIMONIALS, DetailedFlower, POPULAR_PRODUCTS, COLLECTIONS, 
 import { cargarProductos } from './services/productService';
 import { LoadingScreen } from './components/LoadingScreen';
 import { CartItem, Product, Transaction } from './types';
-import { recordTransaction, validateCardNumber, getCardType } from './services/transactionService';
+import { recordTransaction } from './services/transactionService';
+import { useCart } from './context/CartContext';
 import { X, Minus, Plus, Trash2, Quote, ArrowRight, ShoppingBag, Heart, CheckCircle2, QrCode, Smartphone, ArrowLeft, Camera, ShieldCheck, AlertCircle, Star } from 'lucide-react';
 
 interface FlyingItem {
@@ -23,9 +24,9 @@ type PaymentMethod = 'yape';
 type AppView = 'home' | 'collection' | 'catalog';
 
 const App: React.FC = () => {
+  const { cart, addToCart, updateQuantity, removeFromCart, clearCart, totalPrice, totalItems } = useCart();
   const [currentView, setCurrentView] = useState<AppView>('home');
   const [selectedCollection, setSelectedCollection] = useState<any>(null);
-  const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [wishlistItems, setWishlistItems] = useState<Product[]>([]);
@@ -114,9 +115,11 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
-    // Cargar productos desde Google Sheets
+    // Cargar productos desde Google Sheets solo una vez al inicio
     cargarProductosDesdeSheets();
+  }, []); // Run only once on mount
 
+  useEffect(() => {
     // Actualizar wishlist cuando cambie
     window.addEventListener('wishlistUpdated', updateWishlistItems);
 
@@ -218,57 +221,6 @@ const App: React.FC = () => {
     );
   };
 
-  const addToCart = (product: Product, rect?: DOMRect) => {
-    setCart(prev => {
-      const existingItem = prev.find(item => item.id === product.id);
-      if (existingItem) {
-        return prev.map(item =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      }
-      return [...prev, { ...product, quantity: 1 }];
-    });
-
-    // Animación de vuelo
-    if (rect) {
-      const flyingItem: FlyingItem = {
-        id: Date.now(),
-        src: product.image,
-        start: {
-          x: rect.left,
-          y: rect.top,
-          width: rect.width,
-          height: rect.height
-        }
-      };
-      setFlyingItems(prev => [...prev, flyingItem]);
-      setTimeout(() => {
-        setFlyingItems(prev => prev.filter(item => item.id !== flyingItem.id));
-      }, 850);
-    }
-
-    // Efecto de impacto en el carrito
-    setTimeout(() => {
-      window.dispatchEvent(new CustomEvent('cartImpact'));
-    }, 400);
-  };
-
-  const updateQuantity = (id: string, change: number) => {
-    setCart(prev => prev.map(item => {
-      if (item.id === id) {
-        const newQuantity = item.quantity + change;
-        if (newQuantity <= 0) {
-          return null;
-        }
-        return { ...item, quantity: newQuantity };
-      }
-      return item;
-    }).filter(Boolean));
-  };
-
-  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const popularIds = POPULAR_PRODUCTS.map(p => p.id);
   const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
@@ -355,7 +307,7 @@ const App: React.FC = () => {
 
         <div id="nav-target-container">
           <Navbar
-            cartCount={cart.reduce((a, b) => a + b.quantity, 0)}
+            cartCount={totalItems}
             onOpenCart={() => {
               setIsCartOpen(true);
               window.history.pushState(
@@ -509,7 +461,7 @@ const App: React.FC = () => {
                     <section className="bg-[#DAD7CD]/20 py-32 overflow-hidden">
                       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-24">
                         <div className="w-full lg:w-1/2 relative group">
-                          <img src="/imagenes/FOTO-HISTORIA.jpg" alt="Artista floral" className="w-full h-[700px] object-cover rounded-sm grayscale-[30%] shadow-2xl" />
+                          <img loading="lazy" src="/imagenes/FOTO-HISTORIA.jpg" alt="Artista floral" className="w-full h-[700px] object-cover rounded-sm grayscale-[30%] shadow-2xl" />
                         </div>
                         <div className="w-full lg:w-1/2">
                           <span className="text-[10px] uppercase tracking-[0.5em] text-[#A3B18A] mb-6 block font-bold">El Oficio</span>
@@ -554,7 +506,7 @@ const App: React.FC = () => {
                             <div key={collection.id} className={`group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 border border-[#FAF9F6] hover:border-[#A3B18A]/20 transform hover:-translate-y-2 cursor-pointer`} onClick={() => openCollection(collection)}>
                               {/* Image container with enhanced overlay */}
                               <div className="relative h-[450px] md:h-[500px] overflow-hidden">
-                                <img src={collection.image} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" alt={collection.title} />
+                                <img loading="lazy" src={collection.image} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" alt={collection.title} />
 
                                 {/* Gradient overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -794,19 +746,29 @@ const App: React.FC = () => {
                           required
                           className="w-full bg-transparent border-b border-[#2D2D2D]/10 py-4 focus:outline-none focus:border-[#A3B18A] transition-colors italic text-lg appearance-none"
                           value={checkoutData.month}
-                          onChange={e => setCheckoutData({ ...checkoutData, month: e.target.value })}
+                          onChange={e => {
+                            const newMonth = e.target.value;
+                            setCheckoutData({ ...checkoutData, month: newMonth, day: '' });
+                          }}
                         >
                           <option value="">Mes de Entrega</option>
                           {months.map(m => <option key={m} value={m}>{m}</option>)}
                         </select>
                         <select
                           required
-                          className="w-full bg-transparent border-b border-[#2D2D2D]/10 py-4 focus:outline-none focus:border-[#A3B18A] transition-colors italic text-lg appearance-none"
+                          className="w-full bg-transparent border-b border-[#2D2D2D]/10 py-4 focus:outline-none focus:border-[#A3B18A] transition-colors italic text-lg appearance-none disabled:opacity-50"
                           value={checkoutData.day}
+                          disabled={!checkoutData.month}
                           onChange={e => setCheckoutData({ ...checkoutData, day: e.target.value })}
                         >
                           <option value="">Día</option>
-                          {Array.from({ length: 31 }).map((_, i) => <option key={i + 1} value={i + 1}>{i + 1}</option>)}
+                          {checkoutData.month && (function() {
+                            const m = checkoutData.month;
+                            let days = 31;
+                            if (m === 'Febrero') days = 29;
+                            else if (['Abril', 'Junio', 'Septiembre', 'Noviembre'].includes(m)) days = 30;
+                            return Array.from({ length: days }).map((_, i) => <option key={i + 1} value={i + 1}>{i + 1}</option>);
+                          })()}
                         </select>
                       </div>
                     </div>
@@ -868,7 +830,7 @@ const App: React.FC = () => {
                     <form onSubmit={handleCheckoutSubmit}>
                       <div className="text-center p-12 bg-white rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-[#A3B18A] to-transparent"></div>
-                        <img src="/imagenes/qryape-nyuk.png" alt="QR para pagar nyuk.pe" className="w-[300px] h-[300px] mx-auto mb-8" />
+                        <img loading="lazy" src="/imagenes/qryape-nyuk.png" alt="QR para pagar nyuk.pe" className="w-[300px] h-[300px] mx-auto mb-8" />
                         <p className="serif italic text-2xl mb-2">Escanea para pagar</p>
                         <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-4 font-bold">nyuk.pe Boutique</p>
                         <p className="text-[20px] text-gray-500 mb-8">Número: <span className="font-bold">934202560</span></p>
@@ -954,7 +916,7 @@ const App: React.FC = () => {
                     <button onClick={() => {
                       // Limpiar estado y cerrar
                       setIsCheckoutOpen(false);
-                      setCart([]);
+                      clearCart();
                       setReceiptImage(null); // Limpiar imagen del comprobante
                       // Resetear formulario
                       setCheckoutData({
@@ -1053,7 +1015,7 @@ const App: React.FC = () => {
                   <button
                     onClick={() => {
                       if (window.confirm('¿Vaciar todo el carrito?')) {
-                        setCart([]);
+                        clearCart();
                       }
                     }}
                     className="text-gray-400 hover:text-red-500 transition-colors text-[9px] uppercase tracking-widest font-bold mr-6"
@@ -1071,7 +1033,7 @@ const App: React.FC = () => {
               <div className="flex-1 overflow-y-auto space-y-8">
                 {cart.map(item => (
                   <div key={item.id} className="flex space-x-6 items-center border-b border-gray-100 pb-6">
-                    <img src={item.image} className="w-16 h-20 object-cover rounded-sm" alt="" />
+                    <img loading="lazy" src={item.image} className="w-16 h-20 object-cover rounded-sm" alt="" />
                     <div className="flex-1">
                       <p className="text-[10px] font-bold uppercase mb-3">{item.name}</p>
                       <div className="flex items-center space-x-4">
@@ -1085,7 +1047,7 @@ const App: React.FC = () => {
                           </button>
                         </div>
                         <button
-                          onClick={() => updateQuantity(item.id, -item.quantity)}
+                          onClick={() => removeFromCart(item.id)}
                           className="text-gray-400 hover:text-red-500 transition-colors"
                           aria-label="Eliminar producto"
                         >
