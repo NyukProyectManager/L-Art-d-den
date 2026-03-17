@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { DetailedFlower } from '../constants';
 
 export const LoadingScreen: React.FC = () => {
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [shouldRender, setShouldRender] = useState(true);
+
+  useEffect(() => {
+    // Start fade-out after 3 seconds
+    const fadeTimer = setTimeout(() => {
+      setIsFadingOut(true);
+    }, 3000);
+
+    // Remove component after fade-out completes
+    const removeTimer = setTimeout(() => {
+      setShouldRender(false);
+    }, 4000); // 3s visible + 1s fade-out
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
+
+  if (!shouldRender) return null;
+
   return (
-    <div className="fixed inset-0 z-[200] bg-[#FAF9F6] flex flex-col items-center justify-center transition-opacity duration-1000">
+    <div className={`fixed inset-0 z-[200] bg-[#FAF9F6] flex flex-col items-center justify-center transition-opacity duration-1000 ease-in-out ${
+      isFadingOut ? 'opacity-0' : 'opacity-100'
+    }`}>
       <div className="relative w-64 h-64 flex items-center justify-center">
         {/* Decorative Ring */}
         <div className="absolute inset-0 border-[1px] border-[#A3B18A]/20 rounded-full animate-slow-spin"></div>

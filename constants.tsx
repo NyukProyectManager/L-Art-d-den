@@ -77,21 +77,21 @@ export const PRODUCTS: Product[] = [
 export const COLLECTIONS = [
   {
     id: 'san-valentin',
-    title: '',
+    title: 'San Valentín',
     subtitle: 'El lenguaje del amor',
-    image: '/imagenes/portada-sanvalentin.jpg', // ← minúsculas
+    image: '/imagenes/portada-sanvalentin.png', // ← minúsculas
     category: 'San Valentín'
   },
   {
     id: 'arreglos',
-    title: '',
+    title: 'Arreglos Florales',
     subtitle: 'Diseño estructural',
     image: '/imagenes/portada-arreglos.png', // ← minúsculas
     category: 'Arreglos'
   },
   {
     id: 'ramos',
-    title: '',
+    title: 'Ramos Frescos',
     subtitle: 'Frescura portátil',
     image: '/imagenes/portada-ramos.png', // ← minúsculas
     category: 'Frescas'

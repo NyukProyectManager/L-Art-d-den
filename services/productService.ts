@@ -45,7 +45,7 @@ export const cargarProductos = async (): Promise<Product[]> => {
       // Actualizar cache
       productosCache = data.data;
       ultimaActualizacion = ahora;
-      
+
       console.log(`✅ ${data.count} productos cargados desde Google Sheets`);
       return data.data;
     } else {
@@ -54,7 +54,7 @@ export const cargarProductos = async (): Promise<Product[]> => {
 
   } catch (error) {
     console.error('❌ Error al cargar productos:', error);
-    
+
     // Si falla, usar productos de respaldo
     console.log('📋 Usando productos de respaldo');
     return obtenerProductosRespaldo();
