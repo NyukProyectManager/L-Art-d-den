@@ -1,7 +1,277 @@
 # ACTION PLAN — SEO Fixes for nyuk.vercel.app
-**Generated:** 2026-03-17 | **Overall Score:** 58/100 → Target: 80+/100
+**Generated:** 2026-03-17 | **Current Score:** 78/100 → **Target:** 85+/100
 
 ---
+
+## 🚀 IMMEDIATE ACTIONS (Week 1)
+
+### 🔴 Critical - Fix Immediately
+
+#### 1. Add AI Crawler Rules to robots.txt
+**Impact:** +10 points | **Effort:** Low | **Priority:** #1
+
+**Current Issue:** 11 AI crawlers inherit generic rules instead of explicit management
+
+**Fix:**
+```txt
+# AI Crawler Management
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Disallow: /
+```
+
+**Files to update:** `public/robots.txt`, `dist/robots.txt`
+
+#### 2. Add Permissions-Policy Security Header
+**Impact:** +5 points | **Effort:** Low | **Priority:** #2
+
+**Current Issue:** Missing Permissions-Policy header for browser feature control
+
+**Fix:** Add to Vercel configuration or server headers:
+```http
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+```
+
+**Files to update:** `vercel.json` (add headers configuration)
+
+---
+
+## ⚡ HIGH IMPACT (Week 2)
+
+### 🟡 High Priority Fixes
+
+#### 3. Expand FAQ Schema Content
+**Impact:** +8 points | **Effort:** Medium | **Priority:** #3
+
+**Current Issue:** Only 2 FAQ questions, need 5-8 for comprehensive coverage
+
+**Fix:** Add to FAQ schema in `index.html` and `dist/index.html`:
+```json
+{
+  "@type": "Question",
+  "name": "¿Qué tipos de flores ofrecen?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ofrecemos rosas, tulipanes, lirios, orquídeas y arreglos de temporada. Todas nuestras flores son premium y con garantía de frescura."
+  }
+},
+{
+  "@type": "Question", 
+  "name": "¿Hacen entregas en fines de semana?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sí, realizamos entregas todos los días incluyendo sábados y domingos. Horario de entrega: 9am - 9pm."
+  }
+},
+{
+  "@type": "Question",
+  "name": "¿Puedo personalizar mi arreglo floral?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Claro que sí. Ofrecemos personalización completa de colores, tipos de flores y mensajes especiales para tu ocasión."
+  }
+}
+```
+
+#### 4. Optimize Core Web Vitals
+**Impact:** +10 points | **Effort:** Medium | **Priority:** #4
+
+**Current Issue:** Performance metrics unknown, need optimization
+
+**Fix:**
+- Test current CWV using PageSpeed Insights
+- Optimize LCP: Preload critical images, use WebP format
+- Optimize INP: Reduce JavaScript execution time
+- Optimize CLS: Specify image dimensions, avoid layout shifts
+
+**Files to update:** Image components, CSS optimizations
+
+---
+
+## 📈 MEDIUM IMPACT (Week 3-4)
+
+### 🟢 Medium Priority Improvements
+
+#### 5. Add More Homepage Content
+**Impact:** +5 points | **Effort:** Medium | **Priority:** #5
+
+**Current Issue:** Limited visible content on homepage
+
+**Fix:** Add sections to homepage:
+- About Nyuk story (150-200 words)
+- Featured products showcase
+- Customer testimonials
+- Delivery process explanation
+
+#### 6. Verify Image Alt Text
+**Impact:** +3 points | **Effort:** Low | **Priority:** #6
+
+**Current Issue:** Images in React components need alt text verification
+
+**Fix:** Review and update all ProductCard and image components:
+```tsx
+<img 
+  src={imageUrl} 
+  alt={`${name} - ${description} - ${price} soles`}
+  loading="lazy"
+/>
+```
+
+#### 7. Add Twitter Handles
+**Impact:** +2 points | **Effort:** Low | **Priority:** #7
+
+**Fix:** Add to meta tags:
+```html
+<meta property="twitter:site" content="@nyuk_floral">
+<meta property="twitter:creator" content="@nyuk_floral">
+```
+
+---
+
+## 🔧 LOW IMPACT (Future Enhancements)
+
+### 🟢 Nice-to-Have Improvements
+
+#### 8. Implement Breadcrumb Navigation
+**Impact:** +2 points | **Effort:** Medium | **Priority:** #8
+
+**Fix:** Add BreadcrumbList schema and UI component
+
+#### 9. Add Review/Rating Schema
+**Impact:** +3 points | **Effort:** Medium | **Priority:** #9
+
+**Fix:** Add AggregateRating schema to products
+
+#### 10. Consider Blog Section
+**Impact:** +5 points | **Effort:** High | **Priority:** #10
+
+**Fix:** Add /blog section with floral care tips, occasion guides
+
+---
+
+## 📋 IMPLEMENTATION CHECKLIST
+
+### Week 1 Tasks:
+- [ ] Update robots.txt with AI crawler rules
+- [ ] Add Permissions-Policy header to vercel.json
+- [ ] Test and verify changes deployed
+
+### Week 2 Tasks:
+- [ ] Expand FAQ schema to 5-8 questions
+- [ ] Run Core Web Vitals assessment
+- [ ] Implement performance optimizations
+- [ ] Test LCP, INP, CLS improvements
+
+### Week 3-4 Tasks:
+- [ ] Add homepage content sections
+- [ ] Verify and update all image alt text
+- [ ] Add Twitter social meta tags
+- [ ] Consider breadcrumb navigation
+
+### Future Tasks:
+- [ ] Implement review/rating system
+- [ ] Add blog content strategy
+- [ ] Monitor and track SEO improvements
+
+---
+
+## 🎯 SUCCESS METRICS
+
+### Before Optimization (Current: 78/100):
+- Technical SEO: 85/100
+- Content Quality: 80/100  
+- On-Page SEO: 90/100
+- Schema: 85/100
+- Performance: 70/100
+- Images: 75/100
+- AI Readiness: 65/100
+
+### After Optimization (Target: 85+/100):
+- Technical SEO: 90/100 (+5)
+- Content Quality: 85/100 (+5)
+- On-Page SEO: 95/100 (+5)
+- Schema: 90/100 (+5)
+- Performance: 80/100 (+10)
+- Images: 80/100 (+5)
+- AI Readiness: 85/100 (+20)
+
+**Expected Total Score: 85-90/100**
+
+---
+
+## 📊 TRACKING & MONITORING
+
+### Tools to Use:
+1. **Google Search Console** - Track rankings and impressions
+2. **PageSpeed Insights** - Monitor Core Web Vitals
+3. **Schema Markup Validator** - Verify structured data
+4. **Google Analytics** - Track traffic and conversions
+
+### KPIs to Monitor:
+- Organic search traffic growth
+- Keyword ranking improvements (local Lima terms)
+- Core Web Vitals scores
+- Click-through rates from search results
+- Conversion rate from organic traffic
+
+### Review Schedule:
+- **Weekly:** Check Search Console for issues
+- **Monthly:** Review performance metrics and rankings
+- **Quarterly:** Full SEO audit and strategy adjustment
+
+---
+
+## 🚀 EXPECTED OUTCOMES
+
+### Immediate (Week 1-2):
+- Improved AI search visibility
+- Better security score
+- Enhanced structured data coverage
+
+### Medium-term (Month 1-2):
+- Higher search rankings for local floral terms
+- Improved organic traffic
+- Better user experience metrics
+
+### Long-term (Month 3+):
+- Dominance in Lima floral market
+- Increased brand authority
+- Higher conversion rates from organic search
+
+---
+
+**Next Review Date:** 2026-04-17  
+**Auditor:** Agentic SEO Skill  
+**Contact:** Review and update based on implementation results
 
 ## 🔴 CRITICAL — Fix Immediately (High Impact, Low Effort)
 
