@@ -59,7 +59,7 @@ const LocationsPage: React.FC = () => {
     "name": `Nyuk Boutique Floral - ${location.name}`,
     "description": location.description,
     "url": `https://nyuk.vercel.app/locations/${location.name.toLowerCase().replace(/\s+/g, '-')}`,
-    "telephone": "+51934202560",
+    "telephone": "+51948162531",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": location.name,
@@ -185,14 +185,14 @@ const LocationsPage: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+51934202560"
+                href="tel:+51948162531"
                 className="bg-rose-600 text-white px-8 py-4 rounded-lg hover:bg-rose-700 transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Llamar Ahora</span>
               </a>
               <a 
-                href="https://wa.me/51934202560"
+                href="https://wa.me/51948162531"
                 className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
               >
                 <span className="w-5 h-5">💬</span>
@@ -322,7 +322,7 @@ const LocationsPage: React.FC = () => {
                         Ver Detalles
                       </a>
                       <a 
-                        href="https://wa.me/51934202560"
+                        href="https://wa.me/51948162531"
                         className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
                       >
                         💬

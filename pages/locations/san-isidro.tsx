@@ -66,7 +66,7 @@ const SanIsidroPage: React.FC = () => {
     <>
       <Helmet>
         <title>Flores en San Isidro | Delivery Premium 30 Min | Nyuk Boutique Floral</title>
-        <meta name="description" content="Delivery de flores premium en San Isidro con entrega en 30 minutos. Arreglos corporativos, eventos empresariales y ramos de lujo. Teléfono: 934202560." />
+        <meta name="description" content="Delivery de flores premium en San Isidro con entrega en 30 minutos. Arreglos corporativos, eventos empresariales y ramos de lujo. Teléfono: 948162531." />
         <meta name="keywords" content="flores san isidro, delivery flores san isidro, arreglos corporativos san isidro, flores premium san isidro, floristería san isidro, eventos empresariales san isidro" />
         
         {/* Open Graph */}
@@ -100,7 +100,7 @@ const SanIsidroPage: React.FC = () => {
         <meta name="business:contact_data:region" content="Lima" />
         <meta name="business:contact_data:postal_code"="15001" />
         <meta name="business:contact_data:country_name" content="Perú" />
-        <meta name="business:contact_data:phone_number" content="+51934202560" />
+        <meta name="business:contact_data:phone_number" content="+51948162531" />
         <meta name="business:contact_data:website" content="https://nyuk.vercel.app/locations/san-isidro" />
         
         {/* Schema LocalBusiness San Isidro */}
@@ -112,7 +112,7 @@ const SanIsidroPage: React.FC = () => {
           "name": "Nyuk Boutique Floral - San Isidro",
           "description": "Delivery de flores premium en San Isidro con entrega en 30 minutos. Arreglos corporativos, eventos empresariales y ramos de lujo.",
           "url": "https://nyuk.vercel.app/locations/san-isidro",
-          "telephone": "+51934202560",
+          "telephone": "+51948162531",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "San Isidro",
@@ -228,14 +228,14 @@ const SanIsidroPage: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+51934202560"
+                href="tel:+51948162531"
                 className="bg-rose-600 text-white px-8 py-4 rounded-lg hover:bg-rose-700 transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Llamar Ahora</span>
               </a>
               <a 
-                href="https://wa.me/51934202560"
+                href="https://wa.me/51948162531"
                 className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
               >
                 <span className="w-5 h-5">💬</span>
@@ -398,14 +398,14 @@ const SanIsidroPage: React.FC = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="tel:+51934202560"
+                  href="tel:+51948162531"
                   className="bg-white text-rose-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 font-semibold"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>Llamar 934 202 560</span>
+                  <span>Llamar 948 162 531</span>
                 </a>
                 <a 
-                  href="https://wa.me/51934202560"
+                  href="https://wa.me/51948162531"
                   className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2 font-semibold"
                 >
                   <span className="w-5 h-5">💬</span>

@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="https://wa.me/51934202560" 
+                href="https://wa.me/51948162531" 
                 className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -54,13 +54,13 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-rose-100">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5" />
-                <a href="tel:+51934202560" className="hover:text-white transition-colors">
-                  +51 934 202 560
+                <a href="tel:+51948162531" className="hover:text-white transition-colors">
+                  +51 948 162 531
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <MessageCircle className="w-5 h-5" />
-                <a href="https://wa.me/51934202560" className="hover:text-white transition-colors">
+                <a href="https://wa.me/51948162531" className="hover:text-white transition-colors">
                   WhatsApp disponible
                 </a>
               </div>

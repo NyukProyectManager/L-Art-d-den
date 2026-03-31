@@ -18,7 +18,7 @@ const BlogNavbar: React.FC = () => {
     { name: 'Inicio', href: '/' },
     { name: 'Colecciones', href: '/collections' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contacto', href: 'tel:+51934202560' }
+    { name: 'Contacto', href: 'https://wa.me/51948162531' }
   ];
 
   return (

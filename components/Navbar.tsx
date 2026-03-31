@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart, onLinkCli
 
           <div className="pt-8 border-t border-gray-100">
             <div className="flex flex-col space-y-3">
-              <p className="text-[10px] uppercase tracking-[0.4em] text-gray-400 font-bold">Contacto: 934202560</p>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-gray-400 font-bold">Contacto: 948 162 531</p>
               <p className="serif italic text-lg text-gray-600">Francísco Pizarro 698, Lima</p>
               <div className="flex space-x-4 pt-2">
                 <span className="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1">Instagram</span>

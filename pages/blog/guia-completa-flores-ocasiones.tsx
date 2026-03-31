@@ -329,13 +329,13 @@ const GuiaFloresOcasionesPage: React.FC = () => {
                   </p>
                   <div className="flex gap-4 justify-center">
                     <a 
-                      href="tel:+51934202560" 
+                      href="tel:+51948162531" 
                       className="bg-rose-600 text-white px-6 py-3 rounded-lg hover:bg-rose-700 transition-colors"
                     >
                       📞 Llamar ahora
                     </a>
                     <a 
-                      href="https://wa.me/51934202560" 
+                      href="https://wa.me/51948162531" 
                       className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
                     >
                       💬 WhatsApp

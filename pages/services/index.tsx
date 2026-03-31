@@ -121,7 +121,7 @@ const ServicesPage: React.FC = () => {
           "provider": {
             "@type": "LocalBusiness",
             "name": "Nyuk Boutique Floral",
-            "telephone": "+51934202560",
+            "telephone": "+51948162531",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Lima",
@@ -177,14 +177,14 @@ const ServicesPage: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+51934202560"
+                href="tel:+51948162531"
                 className="bg-rose-600 text-white px-8 py-4 rounded-lg hover:bg-rose-700 transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Consultar Ahora</span>
               </a>
               <a 
-                href="https://wa.me/51934202560"
+                href="https://wa.me/51948162531"
                 className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
               >
                 <span className="w-5 h-5">💬</span>
@@ -267,13 +267,13 @@ const ServicesPage: React.FC = () => {
                       </div>
                       <div className="flex gap-2">
                         <a 
-                          href="tel:+51934202560"
+                          href="tel:+51948162531"
                           className="bg-rose-600 text-white px-4 py-2 rounded-lg hover:bg-rose-700 transition-colors"
                         >
                           📞
                         </a>
                         <a 
-                          href="https://wa.me/51934202560"
+                          href="https://wa.me/51948162531"
                           className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
                         >
                           💬
@@ -372,14 +372,14 @@ const ServicesPage: React.FC = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="tel:+51934202560"
+                  href="tel:+51948162531"
                   className="bg-white text-rose-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 font-semibold"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>Llamar 934 202 560</span>
+                  <span>Llamar 948 162 531</span>
                 </a>
                 <a 
-                  href="https://wa.me/51934202560"
+                  href="https://wa.me/51948162531"
                   className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2 font-semibold"
                 >
                   <span className="w-5 h-5">💬</span>

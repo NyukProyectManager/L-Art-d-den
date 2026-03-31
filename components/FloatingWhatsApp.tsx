@@ -6,11 +6,11 @@ export const FloatingWhatsApp: React.FC = () => {
   const [isMinimized, setIsMinimized] = React.useState(false);
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/51934202560?text=Hola%20nyuk.pe%20quiero%20hacer%20un%20pedido', '_blank');
+    window.open('https://wa.me/51948162531?text=Hola%20nyuk.pe%20quiero%20hacer%20un%20pedido', '_blank');
   };
 
   const handleQuickMessage = (message: string) => {
-    window.open(`https://wa.me/51934202560?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/51948162531?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   React.useEffect(() => {
@@ -62,7 +62,7 @@ export const FloatingWhatsApp: React.FC = () => {
           className={`bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 transform hover:scale-110 flex items-center justify-center ${
             isMinimized ? 'w-14 h-14' : 'w-16 h-16'
           }`}
-          title="Contáctanos por WhatsApp 934202560"
+          title="Contáctanos por WhatsApp 948 162 531"
         >
           <Phone size={isMinimized ? 24 : 28} strokeWidth={2} />
         </button>

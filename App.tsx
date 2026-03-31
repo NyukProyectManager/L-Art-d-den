@@ -833,7 +833,7 @@ const App: React.FC = () => {
                         <img loading="lazy" src="/imagenes/qryape-nyuk.png" alt="QR para pagar nyuk.pe" className="w-[300px] h-[300px] mx-auto mb-8" />
                         <p className="serif italic text-2xl mb-2">Escanea para pagar</p>
                         <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-4 font-bold">nyuk.pe Boutique</p>
-                        <p className="text-[20px] text-gray-500 mb-8">Número: <span className="font-bold">934202560</span></p>
+                        <p className="text-[20px] text-gray-500 mb-8">Número: <span className="font-bold">948 162 531</span></p>
 
                         <label className="block cursor-pointer bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl border-2 border-dashed border-rose-300 hover:border-rose-500 hover:shadow-[0_20px_40px_-15px_rgba(244,114,182,0.4)] transition-all duration-500 group relative overflow-hidden">
                           {/* Efectos decorativos sutiles */}

@@ -3,7 +3,7 @@ import { MessageCircle, Instagram } from 'lucide-react';
 
 export const FloatingSocialButtons: React.FC = () => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/51934202560?text=Hola%20nyuk.pe%20quiero%20hacer%20un%20pedido', '_blank');
+    window.open('https://wa.me/51948162531?text=Hola%20nyuk.pe%20quiero%20hacer%20un%20pedido', '_blank');
   };
 
   const handleInstagramClick = () => {
@@ -16,7 +16,7 @@ export const FloatingSocialButtons: React.FC = () => {
       <button
         onClick={handleWhatsAppClick}
         className="bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 transform hover:scale-110 flex items-center justify-center w-14 h-14 group relative"
-        title="Contáctanos por WhatsApp 934202560"
+        title="Contáctanos por WhatsApp 948 162 531"
       >
         <svg 
           width="24" 
